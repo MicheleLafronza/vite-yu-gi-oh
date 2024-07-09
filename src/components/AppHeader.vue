@@ -6,7 +6,7 @@
 
 <template>
 
-    <Header>
+    <header>
 
         <div class="row">
 
@@ -16,7 +16,7 @@
 
         </div>
 
-    </Header>
+    </header>
 
 </template>
 

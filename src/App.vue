@@ -1,4 +1,9 @@
 <script>
+// import store
+import { store } from './store.js'
+import axios from 'axios';
+
+
 // import dei componenti
 import AppContent from './components/AppContent.vue';
 import AppHeader from './components/AppHeader.vue';
@@ -8,6 +13,26 @@ export default {
   components: {
     AppHeader,
     AppContent
+  },
+  data() {
+    return {
+      store,
+      
+    }
+  },
+  methods: {
+    getCards(){
+      axios.get(store.UrlApi)
+      .then(function (response) {
+        console.log(response.data.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    }
+  },
+  created() {
+    this.getCards();
   }
 }
 </script>
