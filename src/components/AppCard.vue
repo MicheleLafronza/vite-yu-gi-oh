@@ -1,6 +1,9 @@
 <script>
 export default {
-    name: 'AppCard'
+    name: 'AppCard',
+    props: {
+        info: Object,
+    }
 }
 
 </script>
@@ -10,16 +13,16 @@ export default {
     <div class="card">
 
         <!-- immagine della carta -->
-        <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Yugioh_Card_Back.jpg" alt="">
+        <img :src="info.card_images[0].image_url_small" :alt="info.name">
 
         <!-- nome della carta -->
         <div class="card-name">
-            LELLO
+            {{ info.name }}
         </div>
 
         <!-- tipo della carta -->
-        <div class="card-type">
-            Umano
+        <div class="card-race">
+            {{ info.race }}
         </div>
 
     </div>
@@ -31,7 +34,7 @@ export default {
 
 .card {
     background-color: $primary;
-    flex-basis: calc(20% - 5px);
+    flex-basis: calc(20% - 15px);
 
     img {
         max-width: 100%;
@@ -45,7 +48,7 @@ export default {
         margin-bottom: 10px;
     }
 
-    .card-type {
+    .card-race {
         text-align: center;
         padding: 5px;
     }

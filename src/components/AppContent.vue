@@ -1,10 +1,18 @@
 <script>
 import AppCard from './AppCard.vue';
 
+// import store
+import { store } from '../store.js';
+
 export default {
     name: 'AppContent',
     components: {
         AppCard
+    },
+    data(){
+        return {
+            store
+        }
     }
 }
 </script>
@@ -13,7 +21,7 @@ export default {
 
     <div class="container">
 
-        <AppCard />
+        <AppCard v-for="card in store.cardList" :key="card.id" :info="card" />
 
     </div>
 
@@ -29,7 +37,8 @@ export default {
         padding: 40px;
         display: flex;
         justify-content: space-between;
-        gap: 5px;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
 </style>
