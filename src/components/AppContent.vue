@@ -1,12 +1,19 @@
 <script>
+import AppCard from './AppCard.vue';
+
 export default {
-    name: 'AppContent'
+    name: 'AppContent',
+    components: {
+        AppCard
+    }
 }
 </script>
 
 <template>
 
     <div class="container">
+
+        <AppCard />
 
     </div>
 
@@ -22,10 +29,7 @@ export default {
         padding: 40px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         gap: 5px;
-        // debug
-        min-height: 300px;
     }
 
 </style>

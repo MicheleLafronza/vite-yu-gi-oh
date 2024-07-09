@@ -31,7 +31,6 @@ export default {
 
 // regole main
 main {
-  background-color: $primary;
   padding-top: 50px;
 }
 </style>
