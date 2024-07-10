@@ -7,12 +7,15 @@ import axios from 'axios';
 // import dei componenti
 import AppContent from './components/AppContent.vue';
 import AppHeader from './components/AppHeader.vue';
+import AppSelect from './components/AppSelect.vue';
+
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppContent
+    AppContent,
+    AppSelect
   },
   data() {
     return {
@@ -43,6 +46,8 @@ export default {
   <AppHeader />
 
   <main>
+
+    <AppSelect />
 
     <AppContent />
 
