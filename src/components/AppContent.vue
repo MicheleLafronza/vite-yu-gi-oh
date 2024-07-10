@@ -1,5 +1,6 @@
 <script>
 import AppCard from './AppCard.vue';
+import AppResult from './AppResult.vue';
 
 // import store
 import { store } from '../store.js';
@@ -7,7 +8,8 @@ import { store } from '../store.js';
 export default {
     name: 'AppContent',
     components: {
-        AppCard
+        AppCard,
+        AppResult
     },
     data(){
         return {
@@ -21,7 +23,15 @@ export default {
 
     <div class="container">
 
-        <AppCard v-for="card in store.cardList" :key="card.id" :info="card" />
+        <AppResult />
+
+        <div class="flex-cont">
+            
+            <AppCard v-for="card in store.cardList" :key="card.id" :info="card" />
+            
+        </div>
+
+        
 
     </div>
 
@@ -35,9 +45,15 @@ export default {
         width: 80%;
         margin: 0 auto;
         padding: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
+        
+
+        .flex-cont {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
     }
 
 </style>
