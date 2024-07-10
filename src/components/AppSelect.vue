@@ -16,10 +16,13 @@ export default {
 <template>
 
     <div class="container">
-        <select v-model="store.selected">
+        <!-- select con emit, per mandare info all'app su quale archetipo stiamo selezionando -->
+        <select @change="$emit('filter')" v-model="store.selected">
+
+            <!-- option con un v-for che prende tutto dalla lista degli archetipi che prendiamo dalla API in Appvue -->
             <option disabled value="">Scegli un archetipo</option>
-            <option v-for="option in store.options" :value="option">
-                {{ option }}
+            <option v-for="option in store.options" :value="option.archetype_name">
+                {{ option.archetype_name }}
             </option>
         </select>
     </div>

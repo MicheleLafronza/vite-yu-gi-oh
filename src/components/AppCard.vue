@@ -22,7 +22,7 @@ export default {
 
         <!-- tipo della carta -->
         <div class="card-race">
-            {{ info.race }}
+            {{ info.archetype }}
         </div>
 
     </div>

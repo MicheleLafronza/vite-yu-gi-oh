@@ -36,7 +36,6 @@ export default {
         margin: 0 auto;
         padding: 40px;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         gap: 15px;
     }
